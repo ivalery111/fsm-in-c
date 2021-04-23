@@ -39,4 +39,9 @@ typedef struct fsm_s {
 
 } fsm_t;
 
+/**
+ * APIs
+ */
+fsm_t *fsm_create(const uint8_t *const fsm_name);
+
 #endif
