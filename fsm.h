@@ -37,6 +37,7 @@ typedef struct fsm_state_s {
 typedef struct fsm_s {
   char name[FSM_NAME_SIZE];
 
+  fsm_state_t *init_state;
 } fsm_t;
 
 /**
