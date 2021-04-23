@@ -20,3 +20,22 @@ fsm_t *fsm_create(const uint8_t *const fsm_name) {
 
   return fsm;
 }
+
+fsm_state_t *fsm_create_state(const uint8_t *const state_name,
+                              const bool is_final) {
+  assert(state_name == NULL && "State name cannot be a null\n");
+  if (state_name == NULL) {
+    return NULL;
+  }
+
+  fsm_state_t *state = calloc(1, sizeof(fsm_state_t));
+  if (state == NULL) {
+    return NULL;
+  }
+
+  strncpy(state->name, state_name, FSM_STATE_NAME_SIZE - 1);
+  state->name[FSM_STATE_NAME_SIZE - 1] = '\0';
+  state->is_final_state = is_final;
+
+  return state;
+}
