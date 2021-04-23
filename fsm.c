@@ -39,3 +39,13 @@ fsm_state_t *fsm_create_state(const uint8_t *const state_name,
 
   return state;
 }
+
+void fsm_set_init_state(fsm_t *fsm, fsm_state_t *state) {
+  assert(fsm == NULL && "FSM cannot be a null\n");
+  assert(state == NULL && "Initial state cannot be a null\n");
+  if (fsm == NULL || state == NULL) {
+    return;
+  }
+
+  fsm->init_state = state;
+}

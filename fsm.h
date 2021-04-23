@@ -48,4 +48,6 @@ fsm_t *fsm_create(const uint8_t *const fsm_name);
 fsm_state_t *fsm_create_state(const uint8_t *const state_name,
                               const bool is_final);
 
+void fsm_set_init_state(fsm_t *fsm, fsm_state_t *state);
+
 #endif
